@@ -1,0 +1,135 @@
+.form-group-heading {
+  margin-bottom: 2rem;
+  padding-bottom: .4rem;
+  border-bottom: 1px solid $brown;
+  font-family: "Rokkitt";
+  font-size: 2.4rem;
+  line-height: 2.2rem;
+  color: $brown;
+}
+
+.float-container {
+  border: solid 1px $background-grey;
+  padding: 0 12px;
+  position: relative;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+
+input,
+textarea {
+  font-family: "Taviraj", serif;
+}
+
+.float-container input:not([type="radio"]) {
+  border: none;
+  font-size: 16px;
+  outline: 0;
+  padding: 20px 0 6px 8px;
+  width: 100%;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $background-grey;
+  opacity: 1;
+  /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: $background-grey;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: $background-grey;
+}
+
+
+label {
+  font-size: 14px;
+  position: absolute;
+  font-family: "Rokkitt";
+  font-weight: 700;
+}
+
+.required-indicator {
+  color: $red;
+  margin-left: 4px;
+}
+
+.field-warning {
+  color: $red;
+  font-size: 11px;
+}
+
+.form-errors {
+  color: $red;
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+.radio-label {
+  margin-top: -8px;
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.radio-option {
+  margin-bottom: 8px;
+}
+
+.checkbox-label {
+  margin-top: -4px;
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.currency>i {
+  position: absolute;
+  display: block;
+  transform: translate(0, -50%);
+  top: 60%;
+  pointer-events: none;
+  width: 25px;
+  text-align: left;
+  font-style: normal;
+  font-size: 16px;
+}
+
+.currency>input {
+  margin-left: 12px;
+  width: 90% !important;
+}
+
+button.form {
+  padding: .5rem 3rem;
+  border-radius: 10rem;
+  border: 0;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  color: $white;
+  font-family: "Rokkitt", serif;
+  margin-right: 30px;
+
+  &-submit {
+    background-color: $green;
+  }
+
+  &-reset {
+    background-color: $background-grey;
+    color: $medium-blue;
+  }
+
+  &-cancel {
+    background-color: $background-grey;
+    color: $red;
+  }
+}
+
+button.form:hover {
+  color: $brown !important;
+}

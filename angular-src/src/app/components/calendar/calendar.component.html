@@ -1,0 +1,43 @@
+<div class="row">
+  <h1 class="landing-page-title center-text">Rockland PFLAG Calendar</h1>
+</div>
+
+<div class="row row-no-margin">
+  <div class="col-2-of-18">
+    <div class="calendar__nav calendar__change-month" (click)="getEvents([lastMonth?.lastMonthRef],[lastMonth?.lastMonthYear])">{{this.monthsShort[lastMonth?.lastMonth]}} {{lastMonth?.lastMonthYear}}</div>
+  </div>
+
+  <div class="col-14-of-18 text-center">
+    <div class="calendar__nav calendar__this-month">{{monthFull}} {{year}}</div>
+  </div>
+
+  <div class="col-2-of-18">
+    <div class="calendar__nav calendar__change-month" (click)="getEvents(thisMonth?.nextMonthRef,thisMonth?.nextMonthYear)">
+      {{this.monthsShort[thisMonth?.nextMonth]}} {{thisMonth?.nextMonthYear}}</div>
+  </div>
+</div>
+
+<div class="row row-no-margin ">
+  <div class="calendar__week">
+    <span *ngFor="let day of this.daysFull">
+      <div class="calendar__day-heading" *ngIf="day != null">{{day}}</div>
+    </span>
+  </div>
+</div>
+<div class="row row-no-margin u-margin-btm-medium">
+  <!-- <span *ngIf="(eventList$ | async) else calendarLoading"> -->
+  <div class="calendar__week" *ngFor="let week of weeks">
+    <div class="calendar__day" [class.calendar__dom-today]="day.today" *ngFor="let day of week">
+      <div class="calendar__dom" [class.calendar__dom-otherMonthDay]="day.monthType === 'other'" [class.calendar__dom-thisMonthDay]="day.monthType === 'this'">{{day.dom}}</div>
+      <div class="calendar__event-block">
+        <div class="calendar__event-item" *ngFor="let e of eventList[day.eventString]">
+          {{e.title}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- </span>
+  <ng-template #calendarLoading>
+    Calendar Loading...
+  </ng-template> -->
+</div>

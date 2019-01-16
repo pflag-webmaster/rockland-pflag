@@ -1,0 +1,32 @@
+a.btn {
+  padding: .5rem 3rem;
+  border-radius: 10rem;
+  cursor: pointer;
+  font-family: "Rokkitt", serif;
+  color: $white !important;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-decoration: none;
+}
+
+a.btn:hover {
+  color: $brown !important;
+}
+
+a.btn-donate {
+  background-color: $red;
+}
+
+a.btn-right {
+  float: right;
+}
+
+a.btn-add {
+  background-color: $medium-blue;
+}
+
+a.btn-delete {
+  background-color: $red;
+  padding: .5rem 1rem !important;
+}

@@ -1,0 +1,21 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  background-color: $background-grey;
+}
+
+.main {
+  width: 102.4rem;
+  background-color: #fff;
+  padding-bottom: 22rem;
+  margin: 0 auto;
+}
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";

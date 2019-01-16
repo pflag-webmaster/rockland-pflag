@@ -1,0 +1,120 @@
+.inset-nav {
+  background-color: $pink;
+  width: 100%;
+  min-height: 17rem;
+  margin-right: 3rem;
+  padding-top: .6rem;
+  padding-left: 1rem;
+  font-weight: 700;
+
+  &__nav-item {
+    margin-bottom: .8rem;
+  }
+
+  .-indent {
+    margin-left: 2rem;
+  }
+
+  &__link {
+    font-family: "Rokkitt";
+    font-size: 2rem;
+    line-height: 1;
+    text-decoration: none;
+    color: $brown;
+  }
+
+}
+
+.highlight-text {
+  font-family: "Shrikhand";
+  font-size: 2.3rem;
+  line-height: 1.4;
+  letter-spacing: 1px;
+  color: $brown;
+
+  & .highlight-attribution {
+    text-align: right;
+    margin-top: .5rem;
+    color: $black;
+  }
+
+}
+
+.content-section {
+  margin-bottom: 3rem;
+
+  &__title {
+    color: $medium-blue;
+    font-family: "Rokkitt";
+    font-size: 2.8rem;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  &__text {
+    color: $black;
+    font-family: "Taviraj";
+    font-size: 2rem;
+    line-height: 1.5;
+
+    & p:not(:last-child) {
+      margin-bottom: 2rem;
+
+      &.highlight {
+        color: $orange;
+        font-weight: 600;
+        font-style: italic;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+
+
+
+    }
+
+    &-link {
+      color: $red;
+      font-family: "Rokkitt";
+      font-size: 2.5rem;
+      line-height: 1;
+      text-decoration: none;
+    }
+
+  }
+
+  &__list {
+    list-style: none;
+    margin-bottom: 2rem;
+  }
+
+  &__list-item {
+    margin-bottom: 1.5rem;
+
+    &-description {
+      font-size: 1.4rem;
+      line-height: 1.9rem;
+      padding-left: 3rem;
+      font-style: italic;
+    }
+
+    &-site-link {
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-decoration: none;
+      margin-left: 3rem;
+
+    }
+  }
+
+  &__top-link {
+    float: right;
+    margin-right: 3rem;
+    color: $red;
+    font-family: "Rokkitt";
+    font-size: 2rem;
+    line-height: 1;
+    text-decoration: none;
+  }
+
+}

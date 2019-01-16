@@ -1,0 +1,324 @@
+<div class="row">
+  <h1 class="landing-page-title center-text">Rockland PFLAG Membership</h1>
+</div>
+
+<div class="row u-margin-btm-medium">
+  <div class="col-1-of-18">&nbsp;</div>
+  <div class="col-12-of-18">
+    <div class="content-section__text">Someone needs to come up with a paragraph of text with some bullet points
+      <ul style="margin-left: 25px;margin-bottom: 40px;">
+        <li>to</li>
+        <li>go</li>
+        <li>here</li>
+      </ul>
+    </div>
+
+    <form [formGroup]="membershipForm" (ngSubmit)="onSubmit()">
+
+      <div class="col-18-of-18 ">
+        <div class="form-group-heading">
+          Membership Type
+        </div>
+      </div>
+
+      <div class="nested-row">
+        <div class="col-9-of-18">
+          <div *ngFor="let type of membershipTypes" class="radio-option">
+            <input id="{{type.membershipTypeName}}" type="radio" formControlName="membershipType" [value]="type.membershipTypeName">
+            <label for="{{type.membershipTypeName}}" class="radio-label">{{type.membershipTypeDisplayName}} <span class="membership-cost">(${{type.membershipCost}})</span></label>
+          </div>
+          <div class="field-warning" *ngIf="f.membershipType.invalid && (f.membershipType.dirty || f.membershipType.touched)">Please select a Membership Type.</div>
+        </div>
+        <div class="col-9-of-18">
+          <div class="float-container currency">
+            <label for="additionalDonation">Additional Donation</label>
+            <input id="additionalDonation" type="text" formControlName="additionalDonation">
+            <i>$</i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Business -->
+      <div *ngIf="membershipType === 'business' || membershipType === 'businessPremium' ">
+        <div class="col-18-of-18 u-margin-top-small">
+          <div class="form-group-heading">
+            Business Information
+          </div>
+        </div>
+        <div class="nested-row u-margin-btm-tiny">
+          <div class="col-18-of-18">
+            <div class="float-container">
+              <label for="businessName">Business Name<span class="required-indicator">*</span></label>
+              <input id="businessName" formControlName="businessName" type="text" value="foo">
+            </div>
+            <div class="field-warning" *ngIf="f.businessName.invalid && (f.businessName.businessName?.dirty || f.businessName.businessName?.touched)">Business Name is required</div>
+          </div>
+        </div>
+        <div class="nested-row u-margin-btm-tiny">
+          <div class="col-9-of-18">
+            <div class="float-container">
+              <label for="businessPhone">Business Phone</label>
+              <input id="businessPhone" formControlName="businessPhone" type="text" value="">
+            </div>
+          </div>
+          <div class="col-9-of-18">
+            <div class="float-container">
+              <label for="website">Website</label>
+              <input id="website" formControlName="website" type="text" value="">
+            </div>
+          </div>
+        </div>
+
+        <div class="nested-row u-margin-btm-tiny">
+          <div class="col-18-of-18">
+            <div class="float-container">
+              <label for="businessAddress">Business Address</label>
+              <input id="businessAddress" formControlName="businessAddress" type="text" value="">
+            </div>
+          </div>
+        </div>
+        <div class="nested-row u-margin-btm-tiny">
+          <div class="col-18-of-18">
+            <div class="float-container">
+              <label for="businessOther">Other</label>
+              <input id="businessOther" formControlName="businessOther" type="text" value="" placeholder="Apt 4">
+            </div>
+          </div>
+        </div>
+        <div class="nested-row u-margin-btm-tiny">
+          <div class="col-6-of-18">
+            <div class="float-container">
+              <label for="businessPostalCode">Zip Code</label>
+              <input id="businessPostalCode" formControlName="businessPostalCode" type=" text" value="">
+            </div>
+            <div class="field-warning" *ngIf="f.businessPostalCode.invalid && (f.businessPostalCode.dirty || f.businessPostalCode.touched)">Zip Code must be 5 digits (e.g. 02134)</div>
+          </div>
+          <div class="col-6-of-18">
+            <div class="float-container">
+              <label for="businessCity">City</label>
+              <input id="businessCity" formControlName="businessCity" type="text" value="">
+            </div>
+          </div>
+          <div class="col-6-of-18">
+            <div class="float-container">
+              <label for="businessState">State</label>
+              <input id="businessState" formControlName="businessState" type="text" value="">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member Name -->
+      <div class="col-18-of-18 u-margin-top-small">
+        <div class="form-group-heading">
+          Member Name
+        </div>
+      </div>
+
+      <div class="nested-row u-margin-btm-tiny">
+        <div class="col-9-of-18">
+          <div class="float-container">
+            <label for="firstName">First Name<span class="required-indicator">*</span></label>
+            <input id="firstName" formControlName="firstName" type="text" value="Mortimer">
+          </div>
+          <div class="field-warning" *ngIf="f.firstName.invalid && (f.firstName.dirty || f.firstName.touched)">First Name is required.</div>
+        </div>
+        <div class="col-9-of-18">
+          <div class="float-container">
+            <label for="lastName">Last Name<span class="required-indicator">*</span></label>
+            <input id="lastName" formControlName="lastName" type="text">
+          </div>
+          <div class="field-warning" *ngIf="f.lastName.invalid && (f.lastName.dirty || f.lastName.touched)">Last Name is required.</div>
+        </div>
+      </div>
+      <div class="nested-row u-margin-btm-small">
+        <input type="checkbox" id="ofAge" formControlName="ofAge" value="true"> <label for="ofAge" class="checkbox-label">This person is 18 or older as of {{todayDate | date:'EEEE, MMMM d, y'}}<span class="required-indicator">*</span></label>
+        <div class="field-warning" *ngIf="f.ofAge.invalid && (f.lastName.dirty || f.lastName.touched)">Rockland PFLAG members must be 18 years of age or older.</div>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-18-of-18 u-margin-top-small">
+        <div class="form-group-heading">
+          Contact Information
+        </div>
+      </div>
+
+      <div class="nested-row u-margin-btm-tiny">
+        <div class="col-9-of-18">
+          <div class="float-container">
+            <label for="homePhone">Home Phone</label>
+            <input id="homePhone" formControlName="homePhone" type="text" value="">
+          </div>
+        </div>
+        <div class="col-9-of-18">
+          <div class="float-container">
+            <label for="mobilePhone">Mobile Phone</label>
+            <input id="mobilePhone" formControlName="mobilePhone" type="text" value="">
+          </div>
+        </div>
+      </div>
+      <div class="nested-row u-margin-btm-tiny">
+        <div class="col-9-of-18">
+          <div class="float-container">
+            <label for="otherPhone">Other Phone</label>
+            <input id="otherPhone" formControlName="otherPhone" type="text" value="">
+          </div>
+        </div>
+        <div class="col-9-of-18">
+          <div class="float-container">
+            <label for="email">Email<span class="required-indicator">*</span></label>
+            <input id="email" formControlName="email" type="text" value="" (focus)="newEmail()" (blur)="checkEmail()">
+          </div>
+          <div class="field-warning" *ngIf="f.email.errors?.required !== true && !f.email.valid && (f.email.dirty || f.email.touched)">Invalid email format.</div>
+          <div class="field-warning" *ngIf="f.email.errors?.required === true && (f.email.dirty || f.email.touched)">Email is required.</div>
+          <div class="field-warning" *ngIf="emailExists">This email is already associated with a PFLAG membership.</div>
+        </div>
+      </div>
+
+      <!-- Family Members -->
+      <div class="family-members" *ngIf="membershipType === 'family'" formArrayName="familyMembers">
+        <div class="col-18-of-18 u-margin-top-small">
+          <div class="form-group-heading">
+            Family Members
+          </div>
+        </div>
+        <div *ngFor="let familyMember of familyMembersFormGroup.controls; let i = index">
+          <div [formGroupName]="i" class="additional-member">
+            <div class="nested-row u-margin-btm-tiny">
+              <div class="col-8-of-18">
+                <div class="float-container">
+                  <label for="familyMemberFirstName-{{i}}">First Name<span class="required-indicator">*</span></label>
+                  <input id="familyMemberFirstName-{{i}}" formControlName="familyMemberFirstName" type="text" value="Mortimer">
+                </div>
+                <div class="field-warning" *ngIf="getFamilyMembersFormGroup(i).controls.familyMemberFirstName.invalid && (getFamilyMembersFormGroup(i).controls.familyMemberFirstName.dirty || getFamilyMembersFormGroup(i).controls.familyMemberFirstName.touched)">First
+                  Name is required.</div>
+              </div>
+              <div class="col-8-of-18">
+                <div class="float-container">
+                  <label for="familyMemberLastName-{{i}}">Last Name<span class="required-indicator">*</span></label>
+                  <input id="familyMemberLastName-{{i}}" formControlName="familyMemberLastName" type="text">
+                </div>
+                <div class="field-warning" *ngIf="getFamilyMembersFormGroup(i).controls.familyMemberLastName.invalid && (getFamilyMembersFormGroup(i).controls.familyMemberLastName.dirty || getFamilyMembersFormGroup(i).controls.familyMemberLastName.touched)">Last
+                  Name is required.</div>
+              </div>
+              <div class="col-2-of-18">
+                <a class="btn btn-delete" (click)="deleteFamilyMember(i)"><i class="fas fa-trash-alt"></i></a>
+              </div>
+            </div>
+            <div class="nested-row u-margin-btm-tiny">
+              <div class="col-8-of-18">
+                <div class="float-container">
+                  <label for="familyMemberPhoneNumber-{{i}}">Phone Number</label>
+                  <input id="familyMemberPhoneNumber-{{i}}" formControlName="familyMemberPhoneNumber" type="text" value="Mortimer">
+                </div>
+              </div>
+              <div class="col-8-of-18">
+                <div class="float-container">
+                  <label for="familyMemberEmail-{{i}}">Email</label>
+                  <input id="familyMemberEmail-{{i}}" formControlName="familyMemberEmail" type="text">
+                </div>
+                <div class="field-warning" *ngIf="getFamilyMembersFormGroup(i).controls.familyMemberEmail.errors?.required !== true && !getFamilyMembersFormGroup(i).controls.familyMemberEmail.valid && (getFamilyMembersFormGroup(i).controls.familyMemberEmail.dirty || getFamilyMembersFormGroup(i).controls.familyMemberEmail.touched)">Invalid
+                  email format.</div>
+              </div>
+            </div>
+
+            <div class="nested-row u-margin-btm-small">
+              <input type="checkbox" id="familyMemberOfAge-{{i}}" formControlName="familyMemberOfAge" value="true"> <label for="familyMemberOfAge-{{i}}" class="checkbox-label">This person is 18 or older as of {{todayDate | date:'EEEE, MMMM d,
+                yyyy'}}<span class="required-indicator">*</span></label>
+              <div class="field-warning" *ngIf="getFamilyMembersFormGroup(i).controls.familyMemberOfAge.invalid && (getFamilyMembersFormGroup(i).controls.familyMemberOfAge.dirty || getFamilyMembersFormGroup(i).controls.familyMemberOfAge.touched)">Rockland
+                PFLAG members must be 18 years
+                of age or older.</div>
+            </div>
+
+            <div class="nested-row u-margin-btm-small">
+              <hr />
+            </div>
+          </div>
+        </div>
+        <div class="nested-row u-margin-btm-small">
+          <a class="btn btn-add" (click)="addFamilyMember()">Add Another Family Member</a>
+        </div>
+      </div>
+
+
+      <!-- Address -->
+      <div class="col-18-of-18 u-margin-top-small">
+        <div class="form-group-heading">
+          Address
+        </div>
+      </div>
+
+      <div class="nested-row u-margin-btm-tiny">
+        <div class="col-18-of-18">
+          <div class="float-container">
+            <label for="address">Address</label>
+            <input id="address" formControlName="address" type="text" value="">
+          </div>
+        </div>
+      </div>
+      <div class="nested-row u-margin-btm-tiny">
+        <div class="col-18-of-18">
+          <div class="float-container">
+            <label for="other">Other</label>
+            <input id="other" formControlName="other" type="text" value="" placeholder="Apt 4">
+          </div>
+        </div>
+      </div>
+      <div class="nested-row u-margin-btm-small">
+        <div class="col-6-of-18">
+          <div class="float-container">
+            <label for="postalCode">Zip Code</label>
+            <input id="postalCode" formControlName="postalCode" type=" text" value="">
+          </div>
+          <div class="field-warning" *ngIf="f.postalCode.invalid && (f.postalCode.dirty || f.postalCode.touched)">Zip Code must be 5 digits (e.g. 02134)</div>
+        </div>
+        <div class="col-6-of-18">
+          <div class="float-container">
+            <label for="city">City</label>
+            <input id="city" formControlName="city" type="text" value="">
+          </div>
+        </div>
+        <div class="col-6-of-18">
+          <div class="float-container">
+            <label for="state">State</label>
+            <input id="state" formControlName="state" type="text" value="">
+          </div>
+        </div>
+      </div>
+
+      <div class="nested-row u-margin-btm-small" *ngIf="displayErrorsList.length > 0">
+        <div class="form-errors" *ngFor="let error of displayErrorsList"><i class="fas fa-exclamation-triangle small-right-margin"></i>{{error}}</div>
+      </div>
+
+
+
+      <div class="nested-row u-margin-btm-tiny center-text">
+        <button class="form form-cancel" (click)="onCancel()">Cancel</button>
+        <button class="form form-reset" (click)="onReset()">Reset</button>
+        <button class="form form-submit" type="submit">Sign up</button>
+      </div>
+    </form>
+  </div>
+
+  <button (click)="showForm()">Show Form</button>
+
+
+
+
+
+  <div class="col-5-of-18">&nbsp;</div>
+</div>
+
+<div class="row u-margin-btm-medium">
+  <div class="col-1-of-18">&nbsp;</div>
+  <div class="col-12-of-18 center-text">
+
+    <p class="content-section__text">Membership fees and contributions are tax deductible. </p>
+    <p class="content-section__text">All information will remain confidential.</p>
+
+
+  </div>
+  <div class="col-5-of-18">&nbsp;</div>
+</div>
+
+<pf-nfp></pf-nfp>

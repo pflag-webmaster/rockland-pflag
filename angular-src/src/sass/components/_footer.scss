@@ -1,0 +1,110 @@
+.footer {
+  width: 102.4rem;
+
+  background-image: url(~/images/footer-background2.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+
+  position: absolute;
+  height: 22rem;
+
+  &__address-lines {
+    font-family: "Rokkitt";
+    line-height: 1;
+
+    &--name {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    &--street {
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    &--city-state {
+      font-size: 2rem;
+      font-weight: 500;
+      margin-bottom: .8rem;
+    }
+
+    &--phone-number {
+      font-size: 2rem;
+      font-weight: 500;
+    }
+  }
+}
+
+.footer__left {
+  display: inline-block;
+  margin-top: 2rem;
+  float: left;
+}
+
+.footer__right {
+  display: inline-block;
+  margin-top: 2rem;
+
+  float: right;
+}
+
+.footer__body {
+  margin-top: 2rem;
+  display: inline-block;
+  width: 744px;
+
+
+  &-columns {
+    position: relative;
+    //margin-bottom: .5rem;
+
+    & .footer__body-column {
+      position: relative;
+      top: 0;
+      height: 100%;
+      display: inline-block;
+      vertical-align: top;
+
+      &-one {
+        margin-left: 15px;
+        width: 175px;
+        //background-color: $yellow;
+      }
+
+      &-two {
+        width: 225px;
+        //background-color: $green;
+      }
+
+      &-three {
+        width: 150px;
+        //background-color: $red;
+      }
+
+      &-four {
+        width: 150px;
+        //background-color: $purple;
+      }
+    }
+  }
+
+  &-column-link-list {
+    list-style: none;
+
+    &-item {
+      font-family: "Rokkitt";
+      font-size: 1rem;
+
+      &-link:link,
+      &-link:visited {
+        display: inline-block;
+        text-decoration: none;
+        color: $black;
+        font-size: 2rem;
+        //margin-right: 5rem;
+      }
+    }
+  }
+}

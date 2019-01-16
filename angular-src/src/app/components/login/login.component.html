@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-4-of-18">&nbsp;</div>
+  <div class="col-10-of-18">
+    <br><br><br>
+    <form action="your-action" (submit)="onFormSubmit($event)">
+      <dx-form id="form" [formData]="customer" [readOnly]="false" [showColonAfterLabel]="true" [showValidationSummary]="true" validationGroup="customerData">
+        <dxi-item itemType="group" caption="Login">
+          <dxi-item dataField="email">
+            <dxi-validation-rule type="required" message="Email is required">
+            </dxi-validation-rule>
+            <dxi-validation-rule type="pattern" [pattern]="emailPattern" message="Your email is not in a valid format.">
+            </dxi-validation-rule>
+          </dxi-item>
+          <dxi-item dataField="password" [editorOptions]="{ mode: 'password' }">
+            <dxi-validation-rule type="required" message="Password is required">
+            </dxi-validation-rule>
+          </dxi-item>
+        </dxi-item>
+        <dxi-item itemType="button" [disabled]="disableButton" horizontalAlignment="center" [buttonOptions]="buttonOptions">
+        </dxi-item>
+      </dx-form>
+    </form>
+    <br><br><br>
+  </div>
+  <div class="col-4-of-18">&nbsp;</div>
+</div>

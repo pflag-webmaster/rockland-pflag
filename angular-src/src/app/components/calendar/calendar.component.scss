@@ -1,0 +1,117 @@
+@import '~src/sass/abstracts/variables';
+@import '~src/sass/abstracts/mixins';
+
+.calendar {
+
+  &__week {
+    width: 100%;
+    margin: 0 1rem 0 1rem;
+
+    &:last-child .calendar__day {
+      border-bottom: 1px solid $black;
+    }
+  }
+
+  &__day-heading {
+    float: left;
+    width: 142px;
+    height: 25px;
+    font-weight: 700;
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  &__day {
+
+    float: left;
+    width: 142px;
+    height: 139px;
+
+    border-top: 1px solid $black;
+    border-left: 1px solid $black;
+
+    &:last-child {
+      border-right: 1px solid $black;
+    }
+  }
+
+  &__header {
+    width: 100%;
+    @include clearfix;
+  }
+
+  &__nav {
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 1;
+    height: 30px;
+    //padding-top: 6px;
+    cursor: pointer;
+  }
+
+  &__this-month {
+    font-family: "Rokkitt";
+    font-weight: 600;
+    font-size: 3.5rem;
+    line-height: 3rem;
+    text-align: center;
+    vertical-align: bottom;
+  }
+
+  &__change-month {
+    font-family: "Rokkitt";
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 3rem;
+    text-align: center;
+    vertical-align: bottom;
+  }
+
+
+  &__dom {
+    box-sizing: content-box;
+    border-right: 1px solid $black;
+    border-bottom: 1px solid $black;
+    float: left;
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+
+    font-family: "Rokkitt";
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1;
+    padding-top: 4px;
+
+    &-thisMonthDay {
+      color: $medium-blue;
+    }
+
+    &-otherMonthDay {
+      color: $orange;
+    }
+
+    &-today {
+      background-color: $pink;
+    }
+
+    @include clearfix;
+  }
+
+  &__event {
+    &-block {
+      padding-top: 3rem;
+      padding-left: .8rem;
+      padding-right: .8rem;
+    }
+
+    &-item {
+      font-size: 1.2rem;
+      font-weight: 600;
+      line-height: 1.4rem;
+      margin-bottom: .6rem;
+
+    }
+
+  }
+}

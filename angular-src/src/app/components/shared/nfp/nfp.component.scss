@@ -1,0 +1,12 @@
+@import '~src/sass/abstracts/variables';
+@import '~src/sass/abstracts/mixins';
+
+.nfp-line {
+  color: $purple;
+  font-family: "Shrikhand";
+  font-size: 1.4rem;
+  letter-spacing: .1rem;
+  margin-top: .4rem;
+  display: inline-block;
+  transform: scale(1, 1.3);
+}

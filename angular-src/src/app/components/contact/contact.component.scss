@@ -1,0 +1,31 @@
+@import '~src/sass/abstracts/variables';
+@import '~src/sass/abstracts/mixins';
+
+
+p.display {
+  font-family: "Taviraj";
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 1.7;
+}
+
+div.phone-number {
+  font-family: "Rokkitt";
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 1.7;
+  text-align: center;
+}
+
+div.email-address {
+  font-family: "Rokkitt";
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 1.7;
+  text-align: center;
+
+  & a {
+    text-decoration: none;
+    color: $black;
+  }
+}

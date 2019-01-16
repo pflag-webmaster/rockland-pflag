@@ -1,0 +1,59 @@
+@import '~src/sass/abstracts/variables';
+@import '~src/sass/abstracts/mixins';
+
+.highlight {
+  &-box {
+
+    width: 100%;
+    padding: 2rem 2rem;
+    text-align: center;
+    border-radius: $std-border-radius;
+    background-color: $green;
+
+
+    &__headline {
+      color: $white;
+      font-family: Shrikhand;
+      font-size: 5rem;
+      letter-spacing: .3rem;
+      line-height: 1;
+      margin-bottom: .5rem;
+    }
+
+    &__text {
+      color: $white;
+      font-family: Raleway;
+      font-weight: 500;
+      font-size: 3rem;
+      line-height: 1.5;
+
+    }
+  }
+
+
+  &-block {
+
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    font-family: "Rokkitt";
+
+    &__headline {
+      font-weight: 700;
+      color: $black;
+      font-size: 4rem;
+      line-height: 1;
+      margin-bottom: .5rem;
+    }
+
+    &__text {
+      color: $black;
+      font-family: Raleway;
+      font-weight: 300;
+      font-size: 2rem;
+      line-height: 1.4;
+
+    }
+  }
+
+}

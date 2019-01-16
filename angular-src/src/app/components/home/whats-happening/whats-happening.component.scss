@@ -1,0 +1,74 @@
+@import '~src/sass/abstracts/variables';
+@import '~src/sass/abstracts/mixins';
+
+.whats-happening-header {
+  font-family: "Raleway";
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: .6rem;
+}
+
+.whats-happening-block {
+
+  &__title {
+    font-family: "Rokkitt";
+    font-weight: 700;
+    font-size: 1.8rem;
+
+    &--upcomming-events {
+      color: $red;
+    }
+
+    &--in-the-news {
+      color: $green;
+    }
+
+    &--meetings {
+      color: $dark-blue;
+    }
+
+    &--survey {
+      color: $purple;
+    }
+
+  }
+
+  &__image {
+    width: 100%;
+
+
+  }
+
+  &__story {
+
+    &-title {
+      font-family: "Taviraj";
+      font-weight: 700;
+      font-size: 1.6rem;
+      line-height: 1.1;
+      margin-bottom: .25rem;
+      margin-top: 1.25rem;
+    }
+
+    &-date {
+      font-family: "Raleway";
+      font-weight: 700;
+      font-size: 1.5rem;
+      line-height: 1;
+      margin-bottom: .5rem;
+    }
+
+    &-text {
+      font-family: "Taviraj";
+      font-weight: 300;
+      font-size: 1.25rem;
+      line-height: 1.1;
+    }
+  }
+
+}
+
+.read-more a {
+  text-decoration: none;
+  color: $orange;
+}

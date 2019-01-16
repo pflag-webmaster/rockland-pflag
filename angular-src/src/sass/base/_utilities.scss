@@ -1,0 +1,103 @@
+/*
+* TEST CLASSES
+*/
+
+.fill-blue {
+  background-color: blue;
+  height: 25px;
+
+}
+
+.fill-red {
+  background-color: red;
+  height: 25px;
+
+}
+
+.fill-green {
+  background-color: green;
+  height: 25px;
+
+}
+
+.small-right-margin {
+  margin-right: 10px;
+}
+
+.no-space-after {}
+
+.text-bold {
+  font-weight: 600;
+}
+
+.text-purple {
+  color: $purple;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.right-text {
+  text-align: right;
+}
+
+.left-text {
+  text-align: left;
+}
+
+.u-margin-top-small {
+  margin-top: 2rem !important;
+}
+
+.u-margin-top-smallish {
+  margin-top: 3rem !important;
+}
+
+.u-margin-top-medium {
+  margin-top: 5rem !important;
+}
+
+.u-margin-top-medium-plus {
+  margin-top: 7rem !important;
+}
+
+.u-margin-btm-tiny {
+  margin-bottom: 1rem !important;
+}
+
+.u-margin-btm-small {
+  margin-bottom: 2rem !important;
+}
+
+.u-margin-btm-medium {
+  margin-bottom: 5rem !important;
+}
+
+.u-margin-btm-medium-plus {
+  margin-bottom: 7rem !important;
+}
+
+.u-padding-top-tiny {
+  padding-top: .8rem !important;
+}
+
+.u-padding-top-small {
+  padding-top: 2rem !important;
+}
+
+
+.u-side-margins-small {
+  margin-left: $small-row-margins !important;
+  margin-right: $small-row-margins !important;
+}
+
+
+.u-margin-left-xsmall {
+  margin-left: 1rem;
+}
+
+
+.u-margin-left-small {
+  margin-left: $small-row-margins !important;
+}

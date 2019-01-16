@@ -1,0 +1,21 @@
+@import '~src/sass/abstracts/variables';
+@import '~src/sass/abstracts/mixins';
+
+
+.membership-cost {
+  font-weight: 400;
+}
+
+
+/* &:not(:last-child) {
+    margin-bottom: $gutter-vertical;
+  } */
+.additional-member>.nested-row:last-child {
+  padding-bottom: 10px;
+  border-bottom: 1px solid $background-grey;
+}
+
+.family-members>.additonal-member:last-child.nested-row:last-child {
+  padding-bottom: 10px;
+  border-bottom: 0;
+}

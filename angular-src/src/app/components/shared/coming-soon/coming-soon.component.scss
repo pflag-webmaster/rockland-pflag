@@ -1,0 +1,14 @@
+@import '~src/sass/abstracts/variables';
+@import '~src/sass/abstracts/mixins';
+
+
+.coming-soon {
+  margin-top: 3rem;
+  margin-bottom: 6rem;
+  font-family: "Shrikhand";
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 1.7;
+  text-align: center;
+  color: $green;
+}

@@ -1,0 +1,71 @@
+body {
+  font-family: "Taviraj", serif;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.navigation {
+  font-family: "Rokkitt", serif;
+}
+
+.--coming-soon {
+  color: $red;
+}
+
+.landing-page-title {
+  font-family: "Rokkitt";
+  font-weight: 600;
+  font-size: 4rem;
+  line-height: 1.7;
+  color: $dark-blue;
+}
+
+p.display {
+  font-family: "Taviraj";
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 1.7;
+}
+
+div.phone-number {
+  font-family: "Rokkitt";
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 1.7;
+  text-align: center;
+}
+
+div.email-address {
+  font-family: "Rokkitt";
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 1.7;
+  text-align: center;
+
+  & a {
+    text-decoration: none;
+    color: $black;
+  }
+}
+
+div.coming-soon {
+  margin-top: 3rem;
+  margin-bottom: 6rem;
+  font-family: "Shrikhand";
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 1.7;
+  text-align: center;
+  color: $green;
+}
+
+a:link,
+a:visited {
+  color: $red !important;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $orange !important;
+  text-decoration: none;
+}

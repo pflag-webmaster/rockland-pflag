@@ -1,0 +1,18 @@
+@import '~src/sass/abstracts/variables';
+@import '~src/sass/abstracts/mixins';
+
+.top-stripe {
+  /* Most browsers */
+  position: sticky;
+
+  /* Safari */
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 100000;
+
+  line-height: 9px;
+
+  & img {
+    width: 100%;
+  }
+}

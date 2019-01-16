@@ -1,0 +1,126 @@
+import { Component, OnInit, Input } from "@angular/core";
+
+import { Subscription } from "rxjs";
+
+import { Membership } from "@app/models/membership";
+
+import { MembershipService } from "@app/services/membership.service";
+import { MembershipFormService } from "../membershipForm.service";
+
+@Component({
+  selector: "pf-membership-confirmation",
+  templateUrl: "./membership-confirmation.component.html",
+  styleUrls: ["./membership-confirmation.component.scss"]
+})
+export class MembershipConfirmationComponent implements OnInit {
+  formSubscription: Subscription;
+  data: Membership;
+
+  constructor(
+    private membershipService: MembershipService,
+    private membershipFormService: MembershipFormService
+  ) {
+    this.formSubscription = membershipFormService.membershipSubmitted$.subscribe(
+      membership => {
+        this.data = membership;
+      }
+    );
+  }
+
+  ngOnInit() {}
+
+  confirmedData() {
+    this.membershipService.addMembership(this.data).subscribe(results => {
+      console.log(results);
+    });
+  }
+}
+
+
+
+membership: Membership = {
+    membershipType: null,
+    names: [],
+    address: {
+      addressLine1: null,
+      city: null,
+      state: null,
+      postalCode: null
+    }
+  };
+
+    membership: Membership = {
+    membershipType: "student",
+    names: [{ firstName: "Bob", lastName: "Smith" }],
+    address: {
+      addressLine1: "123 Main St",
+      city: "New City",
+      state: "NY",
+      postalCode: "10956"
+    },
+    homePhone: "123-456-7890",
+    mobilePhone: "123-456-7890",
+    otherPhone: "123-456-7890",
+    additionalDonation: "123.45"
+  };
+
+  /* emailAddress: "bob.smith@test.com", */
+
+  /* membership: Membership = {
+    membershipType: "student",
+    names: [{ firstName: "Bob", lastName: "Smith" }],
+    address: {
+      addressLine1: "123 Main St",
+      city: "New City",
+      state: "NY",
+      postalCode: "10956"
+    }
+  };
+ */
+
+  /*   membership: Membership = {
+    membershipType: "businessPremium",
+    names: [
+      {
+        firstName: "Jerry",
+        lastName: "Smith"
+      },
+      {
+        firstName: "Donna",
+        lastName: "Smith"
+      },
+      {
+        firstName: "Billy",
+        lastName: "Smith"
+      },
+      {
+        firstName: "Phil",
+        lastName: "Smith"
+      }
+    ],
+    address: {
+      addressLine1: "123 Main St",
+      addressLine2: "Aapt 4",
+      city: "Nyack",
+      state: "NY",
+      postalCode: "10956"
+    },
+    homePhone: "123-456-7890",
+    mobilePhone: "123-456-7890",
+    otherPhone: "123-456-7890",
+    emailAddress: "bob.smith@test.com",
+    additionalDonation: "123.45",
+    business: {
+      businessName: "Luken Consulting",
+      businessPhoneNumber: "2121234567",
+      businessEmailAddress: "dennis@lukenconsulting.com",
+      businessWebsite: "www.lukenconsulting.com",
+      businessAddress: {
+        addressLine1: "123 Main St",
+        addressLine2: "Aapt 4",
+        city: "Nyack",
+        state: "NY",
+        postalCode: "10956"
+      }
+    }
+  }; */
